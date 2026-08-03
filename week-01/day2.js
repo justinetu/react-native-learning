@@ -87,3 +87,56 @@ const doubled = numbers.map(number => number * 2);
 // What is the value of doubled?
 
 // doubled = [2, 4, 6, 8, 10]
+
+/*
+    Question 7
+    What does === mean in JavaScript?
+*/
+
+// === checks if a variable is strictly equal to another variable. It compares both the value and
+// the data type of both operands
+
+// == is the loose comparison which performs type conversion. This can lead to unexpected bugs
+
+/*
+    Question 8
+    What is a callback function?
+
+    A callback function is a function that calls another function before returning to the function 
+    that called it.
+
+    It's a function that gets passed into another function as an argument and is executed (called-back)
+    during the higher order function.
+
+    2 types of callbacks. One is synchronous and the other is asynchronous. A synchronous callback
+    is executed immediately line-by-line during the higher order functions execution.
+
+    An asynchronous callback delays it's execution till the completion of an external task like a
+    timer or network request
+
+    to avoid callback hell, we use async await and .then()
+*/
+
+// Synchronous
+function greet(name, callback){
+    let message = `Hello ${name}! It's a pleasure to meet you.`;
+    callback(message);
+}
+
+function display(text){
+    console.log(text);
+}
+
+//greet('Jared', display);
+
+// Asynchronous
+console.log("Start");
+
+setTimeout(() => {
+    console.log("This will pause for 2 seconds.");
+}, 2000);
+
+console.log("End");
+
+
+
