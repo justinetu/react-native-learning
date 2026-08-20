@@ -3,9 +3,9 @@ Question 1
 What is the difference between:
 */
 
-let name = "Justin";
+//let name = "Justin";
 
-const myName = "Justin";
+//const myName = "Justin";
 
 // The difference between these two variables is one can be modified and the other can't.
 // Declaring a variable with const means that you don't intend on changing the variable
@@ -138,5 +138,49 @@ setTimeout(() => {
 
 console.log("End");
 
+/*
 
+Question 9
+What do you think this prints?
+console.log(name);
+
+let name = "Justin";
+And why?
+
+I don't think anything will print because I believe there will be an error because name is printed before it's
+assigned.
+
+
+*/
+
+/*
+
+Question 10
+What do you think this does?
+
+const user = {
+  name: "Justin",
+  address: {
+    city: "Houston"
+  }
+};
+
+const { name } = user;
+
+console.log(name);
+
+*/
+
+// What I think this does is the name property is converted to a string "Justin" and then is printed
+
+// const myUser = {
+//   name: "Justin",
+//   address: {
+//     city: "Houston"
+//   }
+// };
+
+// const { name } = myUser;
+
+// console.log(name);
 
