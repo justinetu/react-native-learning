@@ -158,14 +158,24 @@ function loginUser(username, password, callback){
 function getUserProfile(user, callback){
     console.log("Getting profile...");
     setTimeout(() => {
-        console.log("Profile retrieved!");
-        callback(user);
+        if(user){
+            console.log("Profile retrieved!");
+            callback(user);
+        }
+        else {
+            console.log("Could not retrive profile!");
+        }
     }, 1000);
 }
 
-registerUser("Justin", "1234", function(user) {
+registerUser("Kyle", "1234", function(user) {
     loginUser(user.username, user.password, function(user){
-        console.log("Login successful!");
+        if(user) {
+            console.log("Login successful!");
+        }
+        else {
+            console.log("Login failed!");
+        }
         getUserProfile(user, function(){
             console.log(user);
         });
