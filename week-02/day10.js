@@ -276,3 +276,78 @@ callbacks, and functional programming.
 
 */
 
+/*
+
+🧠 Review Question 1 — Objects, Spread & References
+Consider this code:
+
+const user = {
+    name: "Justin",
+    age: 23,
+    preferences: {
+        theme: "dark",
+        notifications: true
+    }
+};
+
+const updatedUser = {
+    ...user,
+    age: 24,
+    preferences: {
+        ...user.preferences,
+        notifications: false
+    }
+};
+
+console.log(user);
+console.log(updatedUser);
+
+console.log(user === updatedUser);
+console.log(user.preferences === updatedUser.preferences);
+
+Your questions:
+
+1. What will the first console.log() output?
+
+-The first console.log() outputs {name: "Justin", age: 23, preferences: {theme: "dark", notifications: true}}
+
+2. What will the second console.log() output?
+
+-The second console.log() will print {name: "Justin", age: 24, preferences: {theme: "dark", notifications: false}}
+
+
+3. What will this output?
+
+user === updatedUser
+
+-false
+
+4. What will this output?
+
+user.preferences === updatedUser.preferences
+
+-false
+
+
+5. Most importantly: explain WHY #3 and #4 have those results.
+
+-#3 will output false because two different objetcs are being compared 
+-#4 will output false because two different objects are being compared but uodatedUser.preferences 
+has some properties from the user.preferences object
+
+Bonus
+
+What do you think happens if we change:
+
+updatedUser.preferences.notifications = true;
+
+
+Will:
+
+user.preferences.notifications
+
+also change?
+
+-No, updatedUser is it's own object with it's own properties so it has no affect on the user object
+
+*/
