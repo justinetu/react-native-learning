@@ -250,3 +250,85 @@ processExpenses(expenses, printExpense);
 processExpenses(expenses, function(expense) {
     console.log(expense.description);
 });
+
+/*
+
+I want you to connect callbacks + your Expense Analyzer.
+
+Don't use map, filter, or reduce yet.
+
+Given:
+
+const expenses = [
+    { description: "Groceries", amount: 75 },
+    { description: "Gas", amount: 40 },
+    { description: "Netflix", amount: 15 },
+    { description: "Rent", amount: 1200 }
+];
+
+Write:
+
+processExpenses(expenses, callback)
+
+Then make three different callbacks:
+
+Callback 1
+
+Print:
+
+Groceries costs $75
+Gas costs $40
+Netflix costs $15
+Rent costs $1200
+
+Callback 2
+
+Print only the amount:
+
+75
+40
+15
+1200
+
+Callback 3
+
+Print:
+
+EXPENSE: Groceries
+CATEGORY: ...
+
+You'll need to add a category property to each expense.
+
+*/
+
+const myExpenses = [
+    { description: "Groceries", amount: 75, category: "Food" },
+    { description: "Gas", amount: 40, category: "Vehicle" },
+    { description: "Netflix", amount: 15, category: "Entertainment" },
+    { description: "Rent", amount: 1200, category: "Housing" }
+];
+
+function processExpenses(expenses, callback){
+    for(let expense of expenses){
+        callback(expense);
+    }
+}
+
+function printExpenses(expense){
+    console.log(`${expense.description} costs $${expense.amount}`);
+}
+
+function printAmount(expense){
+    console.log(expense.amount);
+}
+
+function formatExpense(expense){
+    console.log(`EXPENSE: ${expense.description}`);
+    console.log(`CATEGORY: ${expense.category}`);
+}
+
+processExpenses(myExpenses, printExpenses);
+processExpenses(myExpenses, printAmount);
+processExpenses(myExpenses, formatExpense);
+
+
